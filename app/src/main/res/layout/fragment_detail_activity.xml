@@ -1,0 +1,175 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="0dp"
+    android:paddingRight="0dp"
+    android:paddingTop="0dp"
+    android:paddingBottom="0dp"
+    tools:showIn="@layout/activity_detail"
+    tools:context="com.example.android.movie.app.DetailActivityFragment">
+
+    <ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:fillViewport="true"
+        >
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="#000000"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="350dp"
+                android:paddingLeft = "20dp"
+                android:paddingTop = "100dp"
+                android:id ="@+id/title"
+                android:background = "@drawable/icon"
+                android:textSize= "50dp"
+                android:textStyle="bold"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/title"
+                android:layout_marginTop="50dp"
+                android:id="@+id/lay"
+                android:scrollbars="none">
+            <ImageView
+                android:layout_width="150dp"
+                android:layout_height="300dp"
+                android:paddingLeft="15dp"
+                android:paddingRight = "15dp"
+                android:paddingTop="15dp"
+                android:paddingBottom = "15dp"
+                android:layout_alignParentLeft="true"
+                android:id = "@+id/poster"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft = "5dp"
+                android:paddingRight = "0dp"
+                android:paddingTop = "15dp"
+                android:paddingBottom = "0dp"
+                android:id ="@+id/date"
+                android:textColor="#ffffff"
+                android:layout_toRightOf="@+id/poster"
+                android:textSize= "25dp"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft = "5dp"
+                android:paddingRight = "0dp"
+                android:paddingTop = "0dp"
+                android:paddingBottom = "5dp"
+                android:id ="@+id/rating"
+                android:textColor="#ffffff"
+                android:layout_below = "@+id/date"
+                android:layout_toRightOf="@+id/poster"
+                android:textStyle="bold"
+                />
+            <Button
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:layout_below = "@+id/rating"
+                android:layout_toRightOf="@+id/poster"
+                android:paddingLeft = "0dp"
+                android:paddingRight = "0dp"
+                android:paddingTop = "0dp"
+                android:paddingBottom = "0dp"
+                android:text = "FAVORITE"
+                android:id = "@+id/favorite"
+                android:gravity = "center"
+                android:onClick = "favorite"
+                />
+            <Button
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:layout_below = "@+id/favorite"
+                android:layout_toRightOf="@+id/poster"
+                android:text = "WATCH LATER"
+                android:paddingLeft = "0dp"
+                android:paddingRight = "0dp"
+                android:paddingTop = "0dp"
+                android:paddingBottom = "0dp"
+                android:layout_marginTop="5dp"
+                android:id = "@+id/wat"
+                android:gravity = "center"
+                android:onClick = "wat"
+                />
+            </RelativeLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft = "15dp"
+                android:paddingRight = "15dp"
+                android:paddingTop = "0dp"
+                android:paddingBottom = "15dp"
+                android:id ="@+id/overview"
+                android:layout_below = "@+id/lay"
+                android:textColor="#ffffff"
+                />
+
+            <LinearLayout android:layout_width = "fill_parent"
+                android:layout_height="wrap_content"
+                android:id = "@+id/linear"
+                android:paddingLeft= "15dp"
+                android:paddingRight = "15dp"
+                android:layout_below = "@+id/overview"
+                android:orientation = "vertical">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/poster"
+                android:id="@+id/trial_section"
+                android:layout_marginTop="50dp"
+                android:scrollbars="none"
+
+
+
+                >
+                <ListView
+                    android:layout_width="wrap_content"
+                    android:layout_height="150dp"
+                    android:id="@+id/list_view_for_videos"
+                    android:textColor="@color/white"
+                    android:background="@drawable/goo"
+                    >
+
+                </ListView>
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/trial_section"
+                android:id="@+id/reviews_section"
+                android:scrollbars="none"
+                android:layout_marginTop="50dp"
+                android:textColor="@color/white"
+
+                >
+                <ListView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/reviews"
+                    android:scrollbars="none"
+                    android:textColor="@color/white"
+
+                    ></ListView>
+
+                </RelativeLayout>
+
+            </LinearLayout>
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>
